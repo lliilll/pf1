@@ -1,0 +1,86 @@
+#TalentManagement {
+    
+  }
+  #TalentManagement section {
+    
+  }
+  #TalentManagement section .wrap {
+    
+  }
+  #TalentManagement section .wrap h3:nth-of-type(1) {
+    
+  margin-bottom: 30px;
+  }
+  #TalentManagement section .wrap > p {
+    
+  }
+  #TalentManagement section .wrap div {
+    
+  display: grid;
+  grid-template-columns: 50% calc(50% - 30px);
+  grid-template-rows: auto;
+  column-gap: 30px;
+  height: 500px;
+  align-content: center;
+  border: 1px solid #ccc;
+  padding-right: 30px;
+  box-sizing: border-box;
+  }
+  #TalentManagement section .wrap div figure {
+    
+  grid-row: 1 / span 6;
+  height: 200px;
+  width: 275px;
+  width: 50%;
+  height: 50%;
+  
+  }
+  #TalentManagement section .wrap div figure img {
+    
+  transform: scale(2);
+  transform-origin: 0px 50%;
+  }
+  #TalentManagement section .wrap div h4 {
+    
+  align-self: end;
+  }
+  #TalentManagement section .wrap div p {
+    
+  display: inline;
+  }
+  #TalentManagement section .wrap div p span {
+    
+  display: inline;
+  }
+  #TalentManagement section .wrap h3:nth-of-type(4) {
+
+  }
+  #TalentManagement section .wrap ul {
+    
+  }
+  #TalentManagement section .wrap ul li {
+    
+  display: grid;
+  grid-template-columns: 20% auto;
+  grid-template-rows: auto 1fr;
+  line-height: 1.4;
+  margin-bottom: 40px;
+  }
+  #TalentManagement section .wrap ul li::before{
+  content: "";
+  display: block;
+  width: 30%;
+  border-top: 2px solid blue; 
+  grid-column: 1 / span 2;
+  margin-bottom: 20px;
+  }
+  #TalentManagement section .wrap ul li h4 {
+    grid-row: 2 / span 4;
+    
+  }
+  #TalentManagement section .wrap ul li h4 span {
+    
+  }
+  #TalentManagement section .wrap ul li p {
+    
+  }
