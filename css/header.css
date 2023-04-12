@@ -35,17 +35,18 @@ body{
     border-top: 1px solid #8080807a;
     display: flex;
   }
-  ul.gnb li{ /*클래스명이gnb인ul 아래에 위치한(있는) li*/
+  
+  ul.gnb>li{ /*클래스명이gnb인ul 아래에 위치한(있는) li*/
             /* 경기도 인천시 부평구 */    
     margin-top: -1px;
   }
-  ul.gnb li a{
+  ul.gnb>li h2 a{
     padding: 10px 30px;
     display: block;
     border-top: 2px solid transparent;
     transition: border 1s;
   }
-  ul.gnb li a:hover{
+  ul.gnb>li h2 a:hover{
     color:red;
     border-top: 2px solid blue;
   }
