@@ -13,13 +13,65 @@
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/subtitle.css">
-    <link rel="stylesheet" href="css/greeting.css">
+    <link rel="stylesheet" href="css/president.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard-std.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
     <link rel="stylesheet" href="css/response.css">
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.4.js"></script>
     <script type="text/javascript" src="js/submenu.js"></script>
+    <script type="text/javascript">
+        // $(document).ready(function(){
+        $(function(){ 
+            // 마크업추가.둘러싸기
+            $(".gallery").wrap("<div class='wgallery'></div>");  
+            $(".wgallery").prepend('<figure><img src="img/cm_img1.jpg" alt=""></figure>');
+            $(".wgallery+h2,.wgallery+h2~p").wrapAll('<div class="wtext"></div>');
+            $(".wgallery,.wtext").wrapAll('<div class="wwgallery flex"></div>');
+
+            // 갤러리이미지 테두리주기
+            $("#president section .wrap ul.gallery li:nth-child(1)").addClass("blueborder");
+            
+            //섬네일 이미지를 클릭하면 테두리표시되게 & 큰이미지 교체 
+            let n; //-1 n은 변수(그릇:데이터를 담는 그릇)
+            $("#president section .wrap ul.gallery li a").click(function(){
+
+                $(this).parent().addClass("blueborder");
+                $(this).parent().siblings().removeClass("blueborder");
+
+                //큰 이미지 교체
+                n=$(this).parent().index()+1;//-2 변수에 데이터를 넣음
+                $(".wgallery figure img").attr("src","img/cm_img"+n+".jpg");
+                return false;
+            });
+            
+            // 학력과 학위년도만 보이게 하기
+            //$("#president section .wrap ul.year>li:not(:first-child)").hide();
+            $("#president section .wrap ul.year>li").not(":first-child").hide();
+
+            //기타메뉴english를 영문이란 글자로 변경하기
+            $("ul.etcmenu li:nth-child(2) a").text("영문");
+
+            //큰이미지를 클릭하면 실행하시오;
+            $("#president section .wrap .wwgallery .wgallery figure img").click(function(){
+                //.wgallery맨뒤에 .popupimg라는 div를 추가하시오
+                $(".popupimg").remove();
+                $(".wgallery").prepend("<div class='popupimg'></div>");
+
+                //popupimg안에 이미지를 추가하시오
+                $(this).clone().appendTo(".popupimg").hide().fadeIn();
+
+                //popupimg안에 닫기버튼 추가하시오append()
+                $(".popupimg").append("<button class='close'>닫기</button>");
+
+                //닫기버튼 클릭하면 .popimg가 페이드아웃되게
+                $(".popupimg .close").click(function(){
+                    $(".popupimg").fadeOut();
+                });
+            });
+
+        });
+    </script>
 </head>
 <body>
     <!-- 상단영역 마크업주석  -->
@@ -43,12 +95,12 @@
                                 <li><a href="" class="block">한진70년</a></li>
                             </ul>
                         </li>
-                        <li class="opacity30">
-                            <h3 class="h5 blue"><a href="" class="block">창업회장관</a></h3>
+                        <li>
+                            <h3 class="h5 blue"><a href="president.html" class="block">창업회장관</a></h3>
                             <ul class="sublist">
-                                <li><a href="" class="block">정석 조중훈</a></li>
-                                <li><a href="" class="block">사업은 예술이다</a></li>
-                                <li><a href="" class="block">전기 다운로드</a></li>
+                                <li><a href="president.html" class="block">정석 조중훈</a></li>
+                                <li class="opacity30"><a href="" class="block">사업은 예술이다</a></li>
+                                <li class="opacity30"><a href="" class="block">전기 다운로드</a></li>
                             </ul>
                         </li>
                         <li class="opacity30">
@@ -188,30 +240,88 @@
     <!-- 서브타이틀 -->
     <div id="subtitle">
         <div class="wrap flex">
-            <h2 class="h1 bold">인사말</h2>
-            <button class="h3">경영철학</button>
+            <h2 class="h1 bold">정석 조중훈</h2>
+            <button class="h3">사업은 예술이다</button>
         </div>
     </div>
     <!-- 메인영역 -->
-    <main id="greeting">
+    <main id="president">
         <nav class="breadcrumb">
             <ol class="wrap flex">
                 <li><a href="main.html">Home </a></li>
-                <li><a href="greeting.html"> 한진소개</a></li>
-                <li>인사말</li>
+                <li><a href="greeting.html"> 한진그룹</a></li>
+                <li><a href="president.html"> 창업회장관</a></li>
+                <li>정석 조중훈</li>
             </ol>
         </nav>
-        <section>
+        <section class="president padding100">
             <div class="wrap">
-                <strong class="h2 block bold">국민으로부터 신뢰와 사랑을 받는<span class="block"></span><span class="blue">국민의 기업</span>으로 계속 도약하겠습니다.</strong>
-                <strong class="h3 block">한진그룹 지주회사인 한진칼 홈페이지를 찾아주셔서 감사합니다.</strong>
-                <p>한진칼은 한진그룹의 경영 투명성 제고와 지배 구조 선진화를 위해 지난 2013년 설립된 이래 자회사들의 자율경영과 책임경영에 힘쓰고 있습니다.</p>
-                <p>한진그룹은 1945년 11월 ‘한민족(韓民族)의 전진(前進)’이라는 의미를 담은 ‘한진상사’ 창업으로 역사를 시작했습니다. ‘한진(韓進)’이라는 의미에는 사업을 통해 우리 민족을 잘 살게 하겠다는 故조중훈 선대회장의 신념이 담겨 있습니다.</p>
-                <p>한진그룹은 1967년 2월에는 해운업 진출 기반을 위해 대진해운을 세웠고, 1968년 2월에는 한국공항, 이듬해인 1969년에는 대한항공공사를 인수해, 대한항공을 설립했습니다. 그룹의 주력 계열사인 대한항공은 외국 항공사들이 닮고 싶어하는 글로벌 선도 항공사로 거듭났으며, ㈜한진, 진에어 등 계열사는 변화와 혁신을 기반으로 물류 산업의 선두 주자로 성장했습니다. </p>
-                <p>한진칼은 70여년의 역사를 자랑하는 한진그룹이 세계 최고의 종합 물류 기업으로 자리매김할 수 있도록 노력하고 있습니다. 항공운송 부문에서는 글로벌 시장에서 영업 경쟁력을, 종합물류 부문에서는 생산능력 및 고객 네트워크 확대를, 호텔∙레저 부문에서는 항공운송 부문과 연계 영업 강화 및 운영 효율성 개선 등을 통해 계열사들의 수익성을 지속적으로 확대해 나갈 예정입니다.</p>
-                <p>한진칼은 주주 중시 정책을 계속 확대하는 동시에 그룹 사업구조를 선진화 시켜나갈 수 있도록 하겠습니다. 또한 지배구조를 지속적으로 개선해 경영 투명성을 더욱 높여나갈 것입니다. </p>
-                <p>한진칼 임직원은 투명한 지배구조를 기반으로 궁극적으로 한진그룹의 기업가치와 주주가치를 높이기 위해 최선의 노력을 다하겠습니다. 감사합니다.</p>
-                <p>한진칼 임직원 일동</p>
+                <ul class="nav flex h4 bold">
+                    <li><a href="" class="blue">정석 조중훈</a></li>
+                    <li><a href="">사업은 예술이다</a></li>
+                    <li><a href="">전기 다운로드</a></li>
+                </ul>
+                <ul class="gallery">
+                    <li><a href=""><img src="img/cm_img1.jpg" alt=""></a></li>
+                    <li><a href=""><img src="img/cm_img2.jpg" alt=""></a></li>
+                    <li><a href=""><img src="img/cm_img3.jpg" alt=""></a></li>
+                    <li><a href=""><img src="img/cm_img4.jpg" alt=""></a></li>
+                    <li><a href=""><img src="img/cm_img5.jpg" alt=""></a></li>
+                </ul>
+                <h2 class="h2 bold">정석<span class="h1">조중훈</span> 창업회장</h2>
+                <p class="p">출생 : 1920년 2월 11일(음력)<span class="block"></span>지역 : 서울특별시 서대문구 미근동</p>
+                <p class="p"><strong class="blue block">아호(雅號): 정석(靜石)</strong>
+                    한번 마음먹으면 끝까지 해내고야 마는 성격인데다<span class="block"></span>
+                    기계를 좋아해서 어린 시절 집안을 분주히 돌아다니며<span class="block"></span>
+                    이것저것 뚝딱거리고 어질러 놓기를 좋아했던<span class="block"></span>
+                    조회장에게 動과 靜이 조화를 이룬 사람이 되라는<span class="block"></span>
+                    뜻에서 선친께서 지어주심
+                </p>
+                <ul class="career flex navtab">
+                    <li class="current"><a href="" class="blue">학력 및 학위</a></li>
+                    <li><a href="">연보</a></li>
+                    <li><a href="">수상 및 수훈</a></li>
+                </ul>
+                <ul class="year">
+                    <li class="navlist">
+                        <h3 class="hide"></h3>
+                        <ol>
+                            <li><strong class="bold">1995 04</strong>월명예공학박사 (한국해양대학)</li>
+                            <li><strong class="bold">1987 02</strong>월명예경영학박사 (블란서 루앙대학</li>
+                            <li><strong class="bold">1972 05</strong>월명예철학박사 (자유중국 문화학원)</li>
+                            <li><strong class="bold">1967 08</strong>월고려대학교 경영대학원 졸업</li>
+                        </ol>
+                    </li>
+                    <li class="navlist">
+                        <h3 class="hide"></h3>
+                        <ol>
+                            <li><strong class="bold">2002 11</strong>월타계(17일)</li>
+                            <li><strong class="bold">1998 08</strong>월정석비행장 완공</li>
+                            <li><strong class="bold">1998 03</strong>월거양해운 인수</li>
+                            <li><strong class="bold">1994 07</strong>월한진지리정보㈜ 설립</li>
+                            <li><strong class="bold">1991 05</strong>월코리아타코마조선공업 인수</li>
+                            <li><strong class="bold">1991 02</strong>월21세기 한국연구재단 설립</li>
+                            <li><strong class="bold">1989 11</strong>월한진정보통신㈜ 설립</li>
+                            <li><strong class="bold">1988 12</strong>월88년 국제최고경영자상 수상</li>
+                            <li><strong class="bold">1988 12</strong>월미국 남가주대 경영대학원 선정</li>
+                            <li><strong class="bold">1987 11</strong>월대한선주 인수</li>
+                            <li><strong class="bold">1987 04</strong>월대한준설공사 인수</li>
+                            <li><strong class="bold">1984 04</strong>월㈜대한항공 회장 취임</li>
+                            <li><strong class="bold">1983 05</strong>월한국 유네스코협회연맹 초대 회장 취임</li>
+                        </ol>
+                    </li>
+                    <li class="navlist">
+                        <h3 class="hide"></h3>
+                        <ol>
+                            <li><strong class="bold">2002 11</strong>월국민훈장무궁화장</li>
+                            <li><strong class="bold">1998 04</strong>월독일연방공화국십자공로대훈장</li>
+                            <li><strong class="bold">1996 11</strong>월불란서오르드르나쇼날뒤 메리트훈장</li>
+                            <li><strong class="bold">1996 04</strong>월회고록 ‘내가 걸어온 길’ 출간</li>
+                            <li><strong class="bold">1996 03</strong>월네덜란드명예훈장(Royal Distribution-Orange Nassau)</li>
+                            <li><strong class="bold">1992 08</strong>월몽골공화국북극성훈장</li>
+                        </ol>
+                    </li>
+                </ul>           
             </div>
         </section>
     </main>

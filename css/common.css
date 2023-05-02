@@ -1,3 +1,7 @@
+body{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight:300;
+}
 .margin30{
  margin-top:30px; 
  margin-bottom:30px; 
@@ -18,6 +22,9 @@
 }
 .hide{
   display: none;
+}
+.opacity30{
+  opacity: 0.3;
 }
 .block{
   display: block;
@@ -89,4 +96,54 @@ img{
   background-size: 64%;
   background-repeat: no-repeat;
   background-position: center;
+}
+.navtab{
+  background-color: #eee;
+  border: 1px solid #bbb;
+}
+.navtab li:not(:first-child){
+  border-left: 1px solid #bbb;
+}
+.navtab li a{
+  display: block;
+  text-align: center;
+  line-height: 3;
+}
+.current{
+  background-color: white;
+  border: 1px solid blue;
+  border-bottom-color: white;
+  border-top-width: 2px;
+  transform: scale(1.02);
+}
+.current a{
+  color: blue;
+}
+/* 본문nav */
+main section .wrap ul.nav {
+  column-gap: 40px;
+  /*! gap: 40px; */
+  margin-bottom: 30px;
+}
+main section .wrap ul.nav li {
+  width: calc(100% / 3);
+}
+main section .wrap ul.nav li:nth-child(1)::before{
+  content:"01";
+  color: #00a0c6;
+}
+main section .wrap ul.nav li:nth-child(2)::before{
+  content:"02";
+}
+main section .wrap ul.nav li:nth-child(3)::before{
+  content:"03";
+}
+main section .wrap ul.nav li a {
+  display: block;
+  line-height: 3;
+  border-top: 2px solid #999;
+  margin-top: 25px;
+}
+main section .wrap ul.nav li:nth-child(1) a{
+  border-top-color:  #00a0c6;
 }

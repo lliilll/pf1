@@ -15,9 +15,12 @@
     <link rel="stylesheet" href="css/subtitle.css">
     <link rel="stylesheet" href="css/governance.css">
     <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/TalentManagement.css">
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard-std.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+    <link rel="stylesheet" href="css/response.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.4.js"></script>
+    <script type="text/javascript" src="js/submenu.js"></script>
+      
 </head>
 <body>
     <!-- 상단영역 마크업주석  -->
@@ -25,18 +28,162 @@
         <h1><a href="main.html">HANJIN KAL</a></h1>
         <nav>
             <ul class="gnb">
-                <li><a href="TalentManagement.html">한진그룹</a></li>
-                <li><a href="company.html">한진칼</a></li>
-                <li><a href="governance.html">ESG경영</a></li>
-                <li><a href="people.html">한진인</a></li>
-                <li><a href="groupnews.html">홍보센타</a></li>
+                <li>
+                    <h2><a href="#">한진그룹</a></h2>
+                    <ul class="submenu flex">
+                        <li>
+                            <h3 class="h5 blue"><a href="greeting.html" class="block">인사말씀</a></h3>
+                            <ul class="sublist">
+                                <li><a href="greeting.html" class="block">인사말씀</a></li>
+                                <li class="opacity30"><a href="" class="block">경영철학 </a></li>
+                            </ul>
+                        </li>
+                        <li class="opacity30">
+                            <h3 class="h5 blue"><a href="" class="block">그룹역사</a></h3>
+                            <ul class="sublist">
+                                <li><a href="" class="block">한진70년</a></li>
+                            </ul>
+                        </li>
+                        <li class="opacity30">
+                            <h3 class="h5 blue"><a href="" class="block">창업회장관</a></h3>
+                            <ul class="sublist">
+                                <li><a href="" class="block">정석 조중훈</a></li>
+                                <li><a href="" class="block">사업은 예술이다</a></li>
+                                <li><a href="" class="block">전기 다운로드</a></li>
+                            </ul>
+                        </li>
+                        <li class="opacity30">
+                            <h3 class="h5 blue"><a href="" class="block">한진의미래</a></h3>
+                        </li>
+                        <li class="opacity30">
+                            <h3 class="h5 blue"><a href="" class="block">한진네트워크</a></h3>
+                            <ul class="sublist">
+                                <li><a href="" class="block">지주회사</a></li>
+                                <li><a href="" class="block">항공부문</a></li>
+                                <li><a href="" class="block">육운부문</a></li>
+                                <li><a href="" class="block">관광/호텔/부동산부문</a></li>
+                                <li><a href="" class="block">정보서비스부문</a></li>
+                                <li><a href="" class="block">비영리법인부문</a></li>
+                                <li><a href="" class="block">해외법인부문</a></li>
+                                <li><a href="" class="block">글로벌네트워크</a></li>
+                            </ul>
+                        </li>
+                        <li class="opacity30">
+                            <h3 class="h5 blue"><a href="" class="block">Contact Us</a></h3>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <h2><a href="#">한진칼</a></h2>
+                    <ul class="submenu flex">
+                        <li>
+                            <h3 class="h5 blue"><a href="company.html" class="block">회사 소개</a></h3>
+                            <ul class="sublist">
+                                <li><a href="company.html" class="block">기업개요</a></li>
+                                <li class="opacity30"><a href="" class="block">연혁</a></li>
+                                <li class="opacity30"><a href="" class="block">CI</a></li>
+                                <li class="opacity30"><a href="" class="block">찾아오시는 길</a></li>
+                            </ul>
+                        </li>
+                        <li class="opacity30">
+                            <h3 class="h5 blue"><a href="" class="block">투자자정보</a></h3>
+                            <ul class="sublist">
+                                <li><a href="" class="block">재무정보</a></li>
+                                <li><a href="" class="block">주식정보</a></li>
+                                <li><a href="" class="block">IR자료실</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <h2><a href="#">ESG경영</a></h2>
+                    <ul class="submenu flex">
+                        <li>
+                            <h3 class="h5 blue"><a href="governance.html" class="block">지속가능경영</a></h3>
+                            <ul class="sublist">
+                                <li class="opacity30"><a href="" class="block">윤리경영</a></li>
+                                <li><a href="TalentManagement.html" class="block">인재경영</a></li>
+                                <li class="opacity30"><a href="" class="block">안전경영</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h3 class="h5 blue"><a href="" class="block">기업지배구조</a></h3>
+                            <ul class="sublist">
+                                <li><a href="governance.html" class="block">기업지배구조헌장</a></li>
+                                <li class="opacity30"><a href="" class="block">이사회</a></li>
+                                <li class="opacity30"><a href="" class="block">위원회</a></li>
+                                <li class="opacity30"><a href="" class="block">정관</a></li>
+                                <li class="opacity30"><a href="" class="block">기타 관련 정보</a></li>
+                            </ul>
+                        </li>
+                        <li class="opacity30">
+                            <h3 class="h5 blue"><a href="" class="block">사회공헌</a></h3>
+                            <ul class="sublist">
+                                <li><a href="" class="block">나눔경영</a></li>
+                                <li><a href="" class="block">상생경영</a></li>
+                                <li><a href="" class="block">육영사업</a></li>
+                                <li><a href="" class="block">의료복지</a></li>
+                                <li><a href="" class="block">활동소식</a></li>
+                            </ul>
+                        </li>
+                        <li class="opacity30">
+                            <h3 class="h5 blue"><a href="" class="block">환경경영</a></h3>
+                            <ul class="sublist">
+                                <li><a href="" class="block">기후변화 대응</a></li>
+                                <li><a href="" class="block">친환경 경영</a></li>
+                                <li><a href="" class="block">활동소식</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <h2><a href="#">한진인</a></h2>
+                    <ul class="submenu flex">
+                        <li>
+                            <h3 class="h5 blue"><a href="people.html" class="block">한진의 인재상</a></h3>
+                        </li>
+                        <li class="opacity30">
+                            <h3 class="h5 blue"><a href="" class="block">인재육성</a></h3>
+                        </li>
+                        <li class="opacity30">
+                            <h3 class="h5 blue"><a href="" class="block">인사제도</a></h3>
+                        </li>
+                        <li class="opacity30">
+                            <h3 class="h5 blue"><a href="" class="block">복리후생</a></h3>
+                        </li>
+                        <li class="opacity30">
+                            <h3 class="h5 blue"><a href="" class="block">채용정보</a></h3>
+                        </li>
+                    </ul>
+
+                </li>
+                <li>
+                    <h2><a href="#">홍보센타</a></h2>
+                    <ul class="submenu flex">
+                        <li>
+                            <h3 class="h5 blue"><a href="groupnews.html" class="block">그룹사소식</a></h3>
+                        </li>
+                        <li class="opacity30">
+                            <h3 class="h5 blue"><a href="" class="block">광고모음</a></h3>
+                            <ul class="sublist">
+                                <li><a href="" class="block">광고영상</a></li>
+                                <li><a href="" class="block">지면광고</a></li>
+                            </ul>
+                        </li>
+                        <li class="opacity30">
+                            <h3 class="h5 blue"><a href="" class="block">정기간행물</a></h3>
+                        </li>
+                        <li class="opacity30">
+                            <h3 class="h5 blue"><a href="" class="block">한진그룹 SNS</a></h3>
+                        </li>
+                    </ul>
+                </li>
             </ul>
             <ul class="etcmenu">
-                <li><a href="">전체메뉴</a></li>
-                <li><a href="">ENGLISH</a></li>
+                <li><a href="#">전체메뉴</a></li>
+                <li><a href="#">ENGLISH</a></li>
                 <i class="fa-solid fa-magnifying-glass" style="color: #3b7ae8;"></i>
             </ul>
-            <button class="hide ham">전체메뉴보기</button>
         </nav>
     </header>
     <!-- 서브타이틀 -->
@@ -59,7 +206,7 @@
         <section>
             <div class="wrap padding100">
                 <p class="p">한진칼은 건전하고 투명한 지배구조 확립을 위해 기업지배구조 헌장을 제정하여 실천하고 있습니다. </p>
-                <ul class="flex">
+                <ul class="flex navtab">
                     <li class="current"><a href="">전문</a></li>
                     <li><a href="">1. 주주</a></li>
                     <li><a href="">2. 이사회</a></li>
@@ -67,12 +214,56 @@
                     <li><a href="">4. 이해관계자</a></li>
                     <li><a href="">5. 공시</a></li>
                 </ul>
-                <h3 class="h3">전문</h3>
-                <div>   
-                    <p class="p">한진칼(이하 “회사”)은 기업 본연의 지속가능한 성장을 추구함과 동시에 이러한 노력이 고객의 만족, 구성원과 협력사의 성장, 주주이익의 극대화, 사회의 행복, 그리고 국가 경제 및 인류의 발전으로 이어질 수 있도록 진취적이며 균형적인 경영활동을 도모한다. </p>
-                    <p class="p">회사는 이러한 경영목표와 철학의 실현에 있어 보다 건전하고 투명한 지배구조의 구축이 그 기초가 됨을 인지하고, 「한진칼 기업지배구조 헌장」을 다음과 같이 제정함으로써 이를 회사 경영의 일반 원칙으로 한다.</p>
-                    <p class="p">회사는 본 헌장을 기초로 전문적이고 독립적인 이사회의 구성과 활동을 지원하고 이사회를 통해 경영진의 책임경영을 감독함으로써, 기업과 주주가치의 영속적인 발전을 추구하고 궁극적으로는 이해관계자의 신뢰와 존경을 받을 수 있는 기업이 되도록 한다. </p>
-                </div>
+                <article class="navlist">
+                    <h3 class="h3">전문</h3>
+                    <div>   
+                        <p class="p">한진칼(이하 “회사”)은 기업 본연의 지속가능한 성장을 추구함과 동시에 이러한 노력이 고객의 만족, 구성원과 협력사의 성장, 주주이익의 극대화, 사회의 행복, 그리고 국가 경제 및 인류의 발전으로 이어질 수 있도록 진취적이며 균형적인 경영활동을 도모한다. </p>
+                        <p class="p">회사는 이러한 경영목표와 철학의 실현에 있어 보다 건전하고 투명한 지배구조의 구축이 그 기초가 됨을 인지하고, 「한진칼 기업지배구조 헌장」을 다음과 같이 제정함으로써 이를 회사 경영의 일반 원칙으로 한다.</p>
+                        <p class="p">회사는 본 헌장을 기초로 전문적이고 독립적인 이사회의 구성과 활동을 지원하고 이사회를 통해 경영진의 책임경영을 감독함으로써, 기업과 주주가치의 영속적인 발전을 추구하고 궁극적으로는 이해관계자의 신뢰와 존경을 받을 수 있는 기업이 되도록 한다. </p>
+                    </div>
+                </article>
+                <article class="navlist">
+                    <h3 class="h3">주주</h3>
+                    <div>   
+                        <p class="p">한진칼(이하 “회사”)은 기업 본연의 지속가능한 성장을 추구함과 동시에 이러한 노력이 고객의 만족, 구성원과 협력사의 성장, 주주이익의 극대화, 사회의 행복, 그리고 국가 경제 및 인류의 발전으로 이어질 수 있도록 진취적이며 균형적인 경영활동을 도모한다. </p>
+                        <p class="p">회사는 이러한 경영목표와 철학의 실현에 있어 보다 건전하고 투명한 지배구조의 구축이 그 기초가 됨을 인지하고, 「한진칼 기업지배구조 헌장」을 다음과 같이 제정함으로써 이를 회사 경영의 일반 원칙으로 한다.</p>
+                        <p class="p">회사는 본 헌장을 기초로 전문적이고 독립적인 이사회의 구성과 활동을 지원하고 이사회를 통해 경영진의 책임경영을 감독함으로써, 기업과 주주가치의 영속적인 발전을 추구하고 궁극적으로는 이해관계자의 신뢰와 존경을 받을 수 있는 기업이 되도록 한다. </p>
+                    </div>
+                </article>
+                <article class="navlist">
+                    <h3 class="h3">이사회</h3>
+                    <div>   
+                        <p class="p">한진칼(이하 “회사”)은 기업 본연의 지속가능한 성장을 추구함과 동시에 이러한 노력이 고객의 만족, 구성원과 협력사의 성장, 주주이익의 극대화, 사회의 행복, 그리고 국가 경제 및 인류의 발전으로 이어질 수 있도록 진취적이며 균형적인 경영활동을 도모한다. </p>
+                        <p class="p">회사는 이러한 경영목표와 철학의 실현에 있어 보다 건전하고 투명한 지배구조의 구축이 그 기초가 됨을 인지하고, 「한진칼 기업지배구조 헌장」을 다음과 같이 제정함으로써 이를 회사 경영의 일반 원칙으로 한다.</p>
+                        <p class="p">회사는 본 헌장을 기초로 전문적이고 독립적인 이사회의 구성과 활동을 지원하고 이사회를 통해 경영진의 책임경영을 감독함으로써, 기업과 주주가치의 영속적인 발전을 추구하고 궁극적으로는 이해관계자의 신뢰와 존경을 받을 수 있는 기업이 되도록 한다. </p>
+                    </div>
+                </article>
+                <article class="navlist">
+                    <h3 class="h3">감사기구</h3>
+                    <div>   
+                        <p class="p">한진칼(이하 “회사”)은 기업 본연의 지속가능한 성장을 추구함과 동시에 이러한 노력이 고객의 만족, 구성원과 협력사의 성장, 주주이익의 극대화, 사회의 행복, 그리고 국가 경제 및 인류의 발전으로 이어질 수 있도록 진취적이며 균형적인 경영활동을 도모한다. </p>
+                        <p class="p">회사는 이러한 경영목표와 철학의 실현에 있어 보다 건전하고 투명한 지배구조의 구축이 그 기초가 됨을 인지하고, 「한진칼 기업지배구조 헌장」을 다음과 같이 제정함으로써 이를 회사 경영의 일반 원칙으로 한다.</p>
+                        <p class="p">회사는 본 헌장을 기초로 전문적이고 독립적인 이사회의 구성과 활동을 지원하고 이사회를 통해 경영진의 책임경영을 감독함으로써, 기업과 주주가치의 영속적인 발전을 추구하고 궁극적으로는 이해관계자의 신뢰와 존경을 받을 수 있는 기업이 되도록 한다. </p>
+                    </div>
+                </article>
+                <article class="navlist">
+                    <h3 class="h3">이해관계자</h3>
+                    <div>   
+                        <p class="p">한진칼(이하 “회사”)은 기업 본연의 지속가능한 성장을 추구함과 동시에 이러한 노력이 고객의 만족, 구성원과 협력사의 성장, 주주이익의 극대화, 사회의 행복, 그리고 국가 경제 및 인류의 발전으로 이어질 수 있도록 진취적이며 균형적인 경영활동을 도모한다. </p>
+                        <p class="p">회사는 이러한 경영목표와 철학의 실현에 있어 보다 건전하고 투명한 지배구조의 구축이 그 기초가 됨을 인지하고, 「한진칼 기업지배구조 헌장」을 다음과 같이 제정함으로써 이를 회사 경영의 일반 원칙으로 한다.</p>
+                        <p class="p">회사는 본 헌장을 기초로 전문적이고 독립적인 이사회의 구성과 활동을 지원하고 이사회를 통해 경영진의 책임경영을 감독함으로써, 기업과 주주가치의 영속적인 발전을 추구하고 궁극적으로는 이해관계자의 신뢰와 존경을 받을 수 있는 기업이 되도록 한다. </p>
+                    </div>
+                </article>
+                <article class="navlist">
+                    <h3 class="h3">공시</h3>
+                    <div>   
+                        <p class="p">한진칼(이하 “회사”)은 기업 본연의 지속가능한 성장을 추구함과 동시에 이러한 노력이 고객의 만족, 구성원과 협력사의 성장, 주주이익의 극대화, 사회의 행복, 그리고 국가 경제 및 인류의 발전으로 이어질 수 있도록 진취적이며 균형적인 경영활동을 도모한다. </p>
+                        <p class="p">회사는 이러한 경영목표와 철학의 실현에 있어 보다 건전하고 투명한 지배구조의 구축이 그 기초가 됨을 인지하고, 「한진칼 기업지배구조 헌장」을 다음과 같이 제정함으로써 이를 회사 경영의 일반 원칙으로 한다.</p>
+                        <p class="p">회사는 본 헌장을 기초로 전문적이고 독립적인 이사회의 구성과 활동을 지원하고 이사회를 통해 경영진의 책임경영을 감독함으로써, 기업과 주주가치의 영속적인 발전을 추구하고 궁극적으로는 이해관계자의 신뢰와 존경을 받을 수 있는 기업이 되도록 한다. </p>
+                    </div>
+                </article>
+                
+                
             </div>
         </section>
     </main>

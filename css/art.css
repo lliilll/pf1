@@ -1,0 +1,237 @@
+.art h2{
+
+}
+.art .wwtimeline{
+  border: 1px solid #ccc;
+  position: relative;
+}
+.art .wtimeline{
+  position:relative;
+  width: 1000px;
+  margin: 0 auto;
+  overflow: hidden;
+  z-index: 1;
+}
+.art .wtimeline::before{
+  content: "";
+  width: calc(100% - 40px);
+  border-top:2px solid #ccc;
+  position: absolute;
+  top:30px;
+  left: 20px;
+}
+.art .timeline{
+  flex-wrap: nowrap;
+  width: fit-content;
+  position: relative;
+  transition: all 1s;
+}
+
+.art .timeline li{
+  width: calc(1000px / 5);
+}
+.art .timeline li a{
+  white-space: nowrap;
+  line-height: 3;
+  margin: 20px 0;
+  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.art .timeline li a::before{
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #ccc;
+  display: block;
+  line-height: 1;
+  transform: translateY(5px);
+  position: relative;
+  z-index: 1;
+  transition: all 0.5s;
+}
+.art .timeline li a::after{
+  content: "";
+  transition: all 0.5s;
+}
+.currentT::before{
+  background-color: blue !important;
+}
+.currentT::after{
+  content: "";
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: #ccc;
+  display: block;
+  line-height: 1;
+  position: absolute;
+  top:-2px;
+  left: calc(50% - 14px);
+}
+
+.art .control{
+  position: absolute;
+  width: 98%;
+  height: 100%;
+  left: 1%;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transform: translateY(-8px);
+}
+.art .control button{
+  background-color: transparent;
+  border: none;
+  font-size: 46px;
+  transform: scaleY(1.9);
+  color: #999;
+  cursor: pointer;
+}
+.art .control button.prev{
+  
+}
+.art .control button.next{
+  
+}
+
+
+.timelinegallery {
+  flex-wrap: wrap;
+  gap: 20px;
+  row-gap: 60px;
+  position: relative;
+}
+.timelinegallery>*{
+  width: calc(100% / 4 - 60px / 4);
+}
+.timelinegallery .intro {
+  line-height: 1.5;
+  position: relative;
+}
+.timelinegallery .intro h3 {
+  margin-bottom: 30px;
+}
+.timelinegallery .intro h3::after{
+  content: "";
+  display: block;
+  width: 20%;
+  border-top:1px solid #ccc;
+  transform: translateY(15px);
+}
+.timelinegallery .intro h3 span {
+  
+}
+.timelinegallery .intro p {
+  height: 90px;
+  overflow: hidden;
+}
+.timelinegallery .intro p span {
+  
+}
+.timelinegallery .intro .view{
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.timelinegallery figure {
+  
+}
+.timelinegallery figure img {
+  
+}
+.timelinegallery figure figcaption {
+  display: none;
+  
+}
+.timelinegallery figure figcaption span {
+  
+}
+.timelinegallery .tPopup{
+  border: 1px solid #ccc;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: white;
+  padding: 40px;
+  box-sizing: border-box;
+}
+.timelinegallery .tPopup h3{
+  font-size: 25px;
+}
+.timelinegallery .tPopup p{
+  height: auto;
+}
+.timelinegallery .tPopup .close{
+  
+}
+.timelinegallery .tPopup .wbutton{
+  display: flex;
+  justify-content: right;
+  gap: 7px;
+}
+.timelinegallery .tPopup .wbutton button{
+  width: 100px;
+  line-height: 3;
+  border: 1px solid #0e93b6;
+  cursor: pointer;
+}
+.timelinegallery .tPopup .wbutton button.close{
+  order: 2;
+  background-color: #0e93b6;
+  color: white;
+}
+.timelinegallery .tPopup .wbutton button.read{
+  order: 1;
+  background-color: white;
+}
+
+#wart .readpopup{
+  position: fixed;
+  width: 1000px;
+  height: auto;
+  border: 1px solid #ccc;
+  z-index: 2;
+  top: 0px;
+  left: 10%;
+  background-color: white;
+  padding: 40px;
+  box-sizing: border-box;
+}
+#wart .readpopup h3{
+
+}
+#wart .readpopup iframe{
+
+  margin: 30px 0 20px;
+}
+#wart .readpopup .wbutton{
+  display: flex;
+  justify-content: right;
+}
+#wart .readpopup button.close{
+  width: 100px;
+  line-height: 3;
+  border: 1px solid #0e93b6;
+  cursor: pointer;
+  background-color: #0e93b6;
+  color: white;
+}
+.timelinegallery .wfigure{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}

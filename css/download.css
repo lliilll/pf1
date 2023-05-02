@@ -1,0 +1,108 @@
+#wdownload {
+  
+}
+#wdownload section {
+  
+}
+#wdownload section .wrap {
+  
+}
+#wdownload section .wrap ul.downloadlist {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  column-gap: 45px;
+  row-gap: 70px;
+  width: 95%;
+  margin: 0 auto;
+}
+#wdownload section .wrap ul.downloadlist li {
+  border-top: 3px solid #1297bb;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+}
+#wdownload section .wrap ul.downloadlist li h3 {
+  
+  height: 50px;
+  padding-top: 20px;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  line-height: 1.2;
+}
+
+#wdownload section .wrap ul.downloadlist li h3::before{
+  content:"";
+  position: absolute;
+  border-right: 1px solid #ddd;
+  width: 1px;
+  height: 70px;
+  top: 0;
+  left: 12px;
+}
+
+#wdownload section .wrap ul.downloadlist li figure {
+  
+  height: 180px;
+}
+#wdownload section .wrap ul.downloadlist li figure img {
+  
+  height: 100%;
+}
+#wdownload section .wrap ul.downloadlist li button {
+  
+  margin-top: 10px;
+  background-color: #fff;
+  color: #1297bb;
+  border: 2px solid #1297bb;
+  padding: 0 10px 15px 19px;
+  cursor: pointer;
+  display: none;
+}
+#wdownload section .wrap ul.downloadlist li button .download-icon{
+  
+  background-image: url(../img/download.JPG);
+  background-position: center;
+  background-size: contain;
+  width: 30px;
+  height: 27px;
+  display: inline-block;
+  transform: translateY(10px);
+}
+
+/* 이미지 팝업 */
+
+#wdownload section .wrap ul.downloadlist .wdown{
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0px;
+}
+#wdownload section .wrap ul.downloadlist .wdown img{
+  width: 200px;
+}
+  
+#wdownload section .wrap ul.downloadlist .downloadlist-popup-overlay .downloadlist-popup{
+  
+  position: relative;
+  width: fit-content;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+#wdownload section .wrap ul.downloadlist .downloadlist-popup-overlay .downloadlist-popup img{
+  width: 600px;
+}
+#wdownload section .wrap ul.downloadlist .downloadlist-popup-overlay .downloadlist-popup button.close{
+  
+  background-color: #fff;
+  padding: 10px;
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  cursor: pointer;
+}
+/* 이미지 팝업 */
