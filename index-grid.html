@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>이선's 개인홈페이지</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cardo:ital@1&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <!-- slick -->
+    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <!-- slick -->
+    <script type="text/javascript">
+        //window.onload = function () {
+        $(document).ready(
+          function(){
+
+
+
+            var elm = ".box";
+            $(elm).each(function (index) {
+                // 개별적으로 Wheel 이벤트 적용
+                $(this).on("mousewheel DOMMouseScroll", function (e) {
+                    e.preventDefault();
+                    var delta = 0;
+                    if (!event) event = window.event;
+                    if (event.wheelDelta) {
+                        delta = event.wheelDelta / 120;
+                        if (window.opera) delta = -delta;
+                    }
+                    else if (event.detail)
+                        delta = -event.detail / 3;
+                    var moveTop = $(window).scrollTop();
+                    var elmSelecter = $(elm).eq(index);
+                    // 마우스휠을 위에서 아래로
+                    if (delta < 0) {
+                        if ($(elmSelecter).next() != undefined) {
+                            try{
+                                moveTop = $(elmSelecter).next().offset().top;
+                            }catch(e){}
+                        }
+                    // 마우스휠을 아래에서 위로
+                    } else {
+                        if ($(elmSelecter).prev() != undefined) {
+                            try{
+                                moveTop = $(elmSelecter).prev().offset().top;
+                            }catch(e){}
+                        }
+                    }
+
+                    // 화면 이동 0.8초(800)
+                    $("html,body").stop().animate({
+                        scrollTop: moveTop + 'px'
+                    }, {
+                        duration: 800, complete: function () {
+                        }
+                    });
+                });
+            });
+
+          //한글,영문 메뉴병 변경
+          var ko=["소개","포트폴리오","문의"];
+          var eng=["profile","portfolio","contact"];
+
+          var n=0;
+          var lang;
+          $(".lang button").click(
+            function(){
+              lang=$(this).attr("data-lang");
+              console.log(lang);
+              if(lang=="k"){
+                n=0;
+                $("header ul.menu li").each(
+                  function(){
+                    $(this).children("a").text(ko[n]);
+                    console.log(n);
+                    n++;
+                  }
+                );
+              }
+              else{
+                n=0;
+                $("header ul.menu li").each(
+                  function(){
+                    $(this).children("a").text(eng[n]);
+                    n++;
+                  }
+                );
+              }
+
+
+            }
+          );
+
+          // 로고 애니메이
+          $("header h1 a span").delay(2000).each(
+            function(){
+              //$(this).delay(5000).css("transform","rotate(12deg)");
+              // $(this).delay(5000).addClass("rot12");
+            }
+          );
+
+          //제이쿼리로 좌측고정메뉴마크업추가하기
+          $("header div h1").after("<ul class='slide'><li><a href='#' data-y='1'>profile</a></li><li><a href='#' data-y='2'>portfolio</a></li><li><a href='#' data-y='3'>contact</a></li></ul>");
+          var titleH=$("#title hgroup").offset().top-45;
+          var profileH=$("#profile").offset().top-45;
+          var portfolioH=$("#portfolio").offset().top-45;
+          var contactH=$("#contact").offset().top-45;
+          console.log(titleH);
+          // 스크롤하면 좌측메뉴가 등장
+          $(window).scroll(
+            function(){
+              if($(window).scrollTop()>titleH){
+                $("header div ul.slide").hide();
+                $("header div ul.slide").removeClass("slidingmenuBack");
+                $("header div ul.slide").show().addClass("slidingmenu");
+              }
+              if($(window).scrollTop()<profileH){
+              $("header div ul.slide").addClass("slidingmenuBack");
+              }
+              if($(window).scrollTop()>profileH){
+                $("ul.slide li:nth-child(1) a").addClass("current");
+                $("ul.slide li").not(":nth-child(1)").children("a").removeClass("current");
+              }
+              if($(window).scrollTop()>portfolioH){
+                $("ul.slide li:nth-child(2) a").addClass("current");
+                $("ul.slide li").not(":nth-child(2)").children("a").removeClass("current");
+              }
+              if($(window).scrollTop()>contactH){
+                $("ul.slide li:nth-child(3) a").addClass("current");
+                $("ul.slide li").not(":nth-child(3)").children("a").removeClass("current");
+              }
+
+            }
+          );
+          // 데메뉴클릭시 페이지 슬라이딩
+          var y;
+           $(".menu li a,.slide li a").click(
+             function(){
+               y=$(this).attr("data-y");
+               if(y==1){
+                 $("html,body").animate({"scrollTop":profileH+45},1000);
+                 return false;
+               }
+               if(y==2){
+                 $("html,body").animate({"scrollTop":portfolioH+45},1000);
+                 return false;
+               }
+               if(y==3){
+                 $("html,body").animate({"scrollTop":contactH+45},1000);
+                 return false;
+               }
+
+             }
+           );
+
+
+           //홈버튼 클릭시 상위로 이동
+           $("button.home").click(
+             function(){
+               $("html,body").animate({"scrollTop":0},400);
+             }
+           );
+
+          //포트폴리오 slick
+          $('.center').slick({
+            centerMode: true,
+            dots:true,
+            autoplay:true,
+            centerPadding: '60px',
+            slidesToShow: 3,
+            responsive: [
+              {
+                breakpoint: 768,
+                settings: {
+                  arrows: false,
+                  centerMode: true,
+                  centerPadding: '40px',
+                  slidesToShow: 3
+                }
+              },
+              {
+                breakpoint: 480,
+                settings: {
+                  arrows: false,
+                  centerMode: true,
+                  centerPadding: '40px',
+                  slidesToShow: 1
+                }
+              }
+            ]
+          });
+
+
+          //
+        }
+      );
+        //}
+    </script>
+    <script type="text/javascript" src="js/ani.js"> </script>
+    <link href="css/aos.css" rel="stylesheet">
+    <script src="js/aos.js"></script>
+
+  </head>
+  <body>
+    <!-- 상단영역 -->
+    <header>
+      <div>
+        <h1>
+          <a href="">
+            <span>이</span>
+            <span>선'</span>
+            <span>s </span>
+            <span>개</span>
+            <span>인</span>
+            <span>홈</span>
+            <span>페</span>
+            <span>이</span>
+            <span>지</span>
+          </a>
+        </h1>
+        <ul class="menu">
+          <li><a href="#" class="eng" data-y="1">profile</a></li>
+          <li><a href="#" class="eng" data-y="2">portfolio</a></li>
+          <li><a href="#" class="eng" data-y="3">contact</a></li>
+        </ul>
+        <span class="lang">
+          <button data-lang="k">kor</button>
+          <button data-lang="e">eng</button>
+        </span>
+      </div>
+    </header>
+    <!-- 타이틀 영역 -->
+    <div id="title" class="box">
+      <hgroup>
+        <h2 class="kor">남의 불행위에 내 행복을 쌓지 마라</h2>
+        <h3 class="eng">UI.UX DESIGNER'S LEE SEON</h3>
+      </hgroup>
+    </div>
+    <!-- 내용 영역 -->
+
+    <div id="profile" class="box">
+      <h2 class="eng">profile</h2>
+      <div class="profilein" data-aos="fade-up">
+        <img data-aos="fade-left" src="https://images.unsplash.com/photo-1588479843425-2f1c68899617?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="" class="left">
+        <div class="right" data-aos="fade-right">
+          <h3>이선</h3>
+          <ul>
+            <li><span>지역</span>안산</li>
+            <li><span>성별</span>남</li>
+            <li><span>거주지</span>안 </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div id="portfolio" class="box">
+      <h2 class="eng">portfolio</h2>
+      <div class="portfolioin">
+        <div class="web">
+          <h3>웹코딩</h3>
+          <ul class="center">
+          <li>
+            <img src="img/1.png" alt="">
+            <div class="detail">
+              <h3>작품</h3>
+              <p></p>
+              <a href="">자세히보기</a>
+            </div>
+          </li>
+          <li>
+            <img src="img/2.png" alt="">
+            <div class="detail">
+              <h3>작품</h3>
+              <p></p>
+              <a href="">자세히보기</a>
+            </div>
+          </li>
+          <li>
+            <img src="img/3.png" alt="">
+            <div class="detail">
+              <h3>작품</h3>
+              <p></p>
+              <a href="">자세히보기</a>
+            </div>
+          </li>
+          <li>
+            <img src="img/4.png" alt="">
+            <div class="detail">
+              <h3>작품</h3>
+              <p></p>
+              <a href="">자세히보기</a>
+            </div>
+          </li>
+          <li>
+            <img src="img/5.png" alt="">
+            <div class="detail">
+              <h3>작품</h3>
+              <p></p>
+              <a href="">자세히보기</a>
+            </div>
+          </li>
+          <li>
+            <img src="img/6.png" alt="">
+            <div class="detail">
+              <h3>작품</h3>
+              <p></p>
+              <a href="">자세히보기</a>
+            </div>
+          </li>
+        </ul>
+        </div>
+        <div class="design">
+          <h3>웹디자인</h3>
+          <div class="designIn">
+            <ul>
+              <li><a href=""><img src="img/01.png" alt=""></a></li>
+              <li><a href=""><img src="img/02.png" alt=""></a></li>
+              <li><a href=""><img src="img/03.png" alt=""></a></li>
+            </ul>
+            <ul>
+              <li><a href=""><img src="img/04.png" alt=""></a></li>
+              <li><a href=""><img src="img/05.png" alt=""></a></li>
+              <li><a href=""><img src="img/06.png" alt=""></a></li>
+            </ul>
+            <ul>
+              <li><a href=""><img src="img/07.png" alt=""></a></li>
+              <li><a href=""><img src="img/08.png" alt=""></a></li>
+              <li><a href=""><img src="img/09.png" alt=""></a></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div id="contact" class="box">
+      <h2 class="eng">contact</h2>
+    </div>
+    <!-- 하단 영역  -->
+    <footer>
+      <h1>이선's 개인홈페이지</h1>
+    </footer>
+    <button class="home" type="button">HOME</button>
+
+    <script type="text/javascript">
+      AOS.init();
+    </script>
+  </body>
+</html>

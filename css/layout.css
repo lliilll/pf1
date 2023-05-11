@@ -1,0 +1,510 @@
+/* 공통 */
+html,body{
+  scrollTop:100px; 
+}
+.box{
+  height: box;
+}
+#title{
+  /*! height: 100%; */
+}
+.box h2{
+  text-align: center;
+  font-size: 40px;
+  line-height: 3;
+  text-transform: uppercase;
+}
+.eng{
+  font-family: 'Cardo', serif;
+}
+/* 상단영역 */
+header{
+ height: 100px;
+ position: absolute;
+ width: 100%;
+ text-align: center;
+ padding-top: 50px;
+ padding-right: 60px;
+ box-sizing: border-box;
+}
+header>div{
+  display: flex;
+  justify-content: flex-end;
+  gap: 60px;
+}
+.rot12{
+  transform: rotate(12deg);
+}
+header h1{
+  
+  /*! float: left; */
+  /*! border: 2px solid; */
+  position: fixed;
+  left: 36px;
+  padding-left: 30px;
+  overflow: hidden;
+  padding: 15px;
+  top: 46px;
+}
+header::before{
+  content: "";
+  width: 340px;
+  height: 65px;
+  display: block;
+  background-color: transparent;
+  position: fixed;
+  left: 0;
+  top:42px;
+  
+  border-radius: 0 20px 20px 0;
+}
+header h1 a{
+  display: block;
+  font-size: 44px;
+  font-weight: 600;
+}
+header h1 a span{
+  display: inline-block;
+  font-size: 25px;
+  transition: all 1s;
+  animation-name:rot12;
+  animation-duration:1s;
+  animation-iteration-count:1;
+  animation-fill-mode: forwards ;
+  animation-timing-function:cubic-bezier(0,.88,.07,1.25);
+  opacity: 0;
+  transform-origin: 100% 100%;
+  transform:translateY(100%); 
+  font-weight: 300;
+}
+@keyframes rot12{
+  0%{
+  transform: translate(-20%,-100%) scale(0.4);  
+  }
+  50%{
+  transform:  translate(20%, 0%) scale(1);
+  }
+  100%{
+    transform:  translate(0%, 0%) scale(1);
+    opacity: 1;
+  }
+}
+header h1 a span:nth-child(1){
+  animation-delay: 0.3;
+}
+header h1 a span:nth-child(2){
+  animation-delay: 0.6s;
+}
+header h1 a span:nth-child(3){
+  animation-delay: 0.9s; 
+}
+header h1 a span:nth-child(4){
+  animation-delay: 1.2s;  
+}
+header h1 a span:nth-child(5){
+  animation-delay: 1.5s;  
+}
+header h1 a span:nth-child(6){
+  animation-delay: 1.8s;  
+}
+header h1 a span:nth-child(7){
+  animation-delay: 2.1s;  
+}
+header h1 a span:nth-child(8){
+  animation-delay: 2.4s;  
+}
+header h1 a span:nth-child(9){
+  animation-delay: 2.7s;  
+}
+.slide{
+  transition: all 1s;
+  position: fixed;
+  left: 0px;
+  opacity: 0;
+  width: auto;
+  top: 162px;
+  text-align: left;
+  z-index: 1;
+  transform: scale(0.5);
+  transform-origin: 0% 50%;
+}
+.slide li{
+  display:block;
+  
+}
+.slide a{
+  line-height: 2;
+  display: block;
+  font-size: 20px;
+  transition: all 0.5s;
+}
+.slide a::after{
+  content: "-";
+  display: inline-block;
+  transform:scale(0);
+  transition: all 0.5s;
+}
+.current{
+  color: gold;
+  transform: scale(1.5) !important;
+  transform-origin: 0 50%;
+ }
+.current::after{
+  content: "";
+  display: inline-block;
+  transform:translateY(-2px) scaleX(3) !important;
+  margin-left: 10px;
+}
+.slidingmenu{
+  left: 52px;
+  opacity: 1;
+  transform: scale(1);
+}
+.slidingmenuBack{
+  left: -50px;
+  opacity: 0;
+}
+.slidingmenu li{
+  display: block;
+}
+.slidingmenu li a{
+}
+
+header ul.menu{
+  display: flex;
+  gap: 20px;
+}
+
+header ul.menu li{
+}
+header ul li a{
+  text-transform:uppercase;
+  font-size: 23px;
+  position: relative;
+  display: block;
+}
+header ul li a span{
+  position: absolute;
+  top:-20px;
+  lef:10%;
+  width:80%;
+  display:block;
+  font-size: 12px;
+  background-color: red;
+  color:white;
+  border-radius: 0 10px 0 10px; 
+  line-height: 1.5;
+  opacity: 0;
+  transition:all 0.5s;
+}
+header ul li a span.ko{
+  opacity: 1;
+  animation:fadeIn;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+@keyframes fadeIn{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+header span.lang{
+  display: flex;
+  gap: 20px;
+}
+header span.lang button{
+  padding: 3px 11px;
+  font-size: 10px;
+  text-transform: uppercase;
+  margin: 0 1%;
+  cursor: pointer;
+}
+
+/*  타이틀  */
+#title{
+  /*! background-color: #ccc; */
+  background-image: url(../img/mountains.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position-y: center;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-attachment: fixed;
+  /*! background-image: url(https://www.elegantthemes.com/images/divi/divi-gallery-hero-background.jpg); */
+}
+#title hgroup{
+  max-width: 1200px;
+  margin: 0 auto;
+}
+#title hgroup h2{
+  font-size: 40px;
+  line-height:1.6;
+  animation-name: h2t;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-direction: reverse ;
+}
+/* @keyframes h2t{
+  100%{
+    transform: translateY(-100%);
+    opacity: 0;
+  } */
+}
+#title hgroup h3{
+  font-size: 30px;
+  color: #999;
+   animation-name: h3t;
+  animation-duration: 2s;
+  animation-delay: 1s;
+  animation-iteration-count: 1;
+  animation-direction: reverse ;
+  animation-fill-mode:backwards ;
+}
+@keyframes h3t{
+  100%{
+    transform: translateY(20%);
+    opacity: 0;
+  }
+}
+
+
+#profile{
+  /*! background: #ffb8b8; */
+  padding: 100px 0 300px;
+}
+
+#profile .profilein{
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 100px;
+}
+#profile .profilein .left{
+  display: inline-block;
+  width: 300px;
+  border: #fff 10px solid;
+}
+#profile .profilein .right{
+  display: inline-block;
+  vertical-align: top;
+  background: #ff8b8b;
+  padding: 20px;
+  margin-left: 100px;
+  border: #fff 10px solid;
+}
+#profile .profilein .right h3{
+  line-height: 3;
+  color: #fff;
+  font-size: 20px;
+}
+#profile .profilein .right ul{
+  
+}
+#profile .profilein .right ul li{
+  line-height: 3;
+  color: #fff;
+}
+#profile .profilein .right ul li span{
+  
+}
+body[data-aos-duration="400"] [data-aos] {
+    transition-duration: 2.4s !important;
+}
+
+
+#portfolio{
+  background-color: #b6d29a;
+  position:relative;
+}
+#portfolio::before{
+  content:"";
+  width: 600px;
+  height: 800px;
+  display: block;
+  background-color: red;
+  transform: skewX(-45deg) translateX(-300px);
+  position: absolute;
+  top:0;
+  left:0;
+}
+#portfolio .portfolioin{
+  max-width: 1400px;
+  margin: 0 auto;
+  margin-top: 80px;
+  overflow: hidden;
+  padding: 30px 0;
+  /*! width: 90%; */
+  padding-bottom: 100px;
+}
+.slick-slide img{
+  width: 100%;
+}
+#portfolio .portfolioin .detail{
+  background-color: rgba(0,0,0,0.4);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: all 0.5s;
+}
+.slick-current:hover .detail{
+  opacity: 1 !important;
+}
+#portfolio .portfolioin .detail h3{
+  text-align: center;
+  line-height: 3;
+  margin-top:30px;
+}
+#portfolio .portfolioin .detail p{
+ text-align: center; 
+}
+#portfolio .portfolioin .detail a{
+  display: block;
+  width: 130px;
+  margin:0 auto;
+  text-align: center;
+}
+.slick-prev{
+  left: 25px !important;
+  z-index: 3;
+}
+.slick-next{
+  right: 25px !important;
+  z-index: 3;
+}
+.slick-dots{
+  bottom: -70px !important;
+}
+.slick-list{
+  overflow: initial !important;
+}
+.slick-slide{
+  transition: all 0.5s;
+  opacity: 0.5;
+}
+.slick-current{
+  transform: scale(1.2);
+  opacity: 1;
+  position: relative;
+  z-index: 2;
+}
+/* 웹디자인작품*/
+#portfolio .design{
+  text-align: center;
+}
+#portfolio .design h3{
+  margin: 200px 0 50px;
+  font-size: 50px;
+  font-family: 'Cardo', serif;
+}
+#portfolio .design ul{
+  display: inline-block;
+  vertical-align: top;
+}
+#portfolio .design ul li{
+  float: left;
+  margin: 25px;
+}
+#portfolio .design ul img{
+  padding: 30px 0;
+  width: 400px;
+  height: 400px;
+  transition: all 1s;
+  position: relative;
+  border-radius: 30%;
+}
+#portfolio .design ul img:hover{
+  transform: scale(1.2);
+}
+#portfolio .design ul a{
+  position: relative;
+  display: block;
+}
+#portfolio .design ul a:hover img{
+  transform: scale(1.2);
+}
+#portfolio .design ul a:hover::before{
+  content: "상세 이미지 보기";
+  position: absolute;
+  left: calc(50% - 85px);
+  top: 43%;
+  z-index: 3;
+  width: 100%;
+  text-align: center;
+  background-color: rgba(250,250,250,0.6);
+  width: 150px;
+  padding: 30px 0;
+  
+  animation-name: textshow;
+  animation-duration: 0.5s;
+  animation-direction: reverse;
+  animation-iteration-count: 1;
+}
+@keyframes textshow{
+  100%{
+    opacity: 0;
+  }
+}
+#portfolio .design ul li:nth-child(4){
+}
+#portfolio .design ul li:nth-child(5){
+  position: absolute;
+}
+#portfolio .design ul li:nth-child(6){
+  
+}
+
+#contact{
+  background-color: #b4dee8;
+  height: 900px;
+}
+footer{
+  background-color: #333;
+}
+.home{
+  position: fixed;
+  right: 1%;
+  bottom: 5%;
+  background-color: #fff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  color: black;
+  border: none;
+  cursor: pointer;
+}
+.home::before{
+  content:"<";
+  transform: rotate(90deg) scaleY(2.5);
+  position: absolute;
+  top: -35px;
+  left: 21px;
+  font-size:13px;
+  animation-name:top;
+  animation-iteration-count: infinite;
+  animation-duration:2s;
+  animation-direction: alternate;
+}
+@keyframes top{
+  /*50%{
+    top:-50px;
+  }*/
+  100%{
+    transform: rotate(90deg) scaleY(2.5) translateX(-20px);
+    color:#fff;
+  }
+}
+
+
+
+
+
