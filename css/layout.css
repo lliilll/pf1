@@ -1,6 +1,7 @@
 /* 공통 */
 html,body{
-  scrollTop:100px; 
+  scrollTop:100px;
+
 }
 .box{
   height: box;
@@ -226,7 +227,6 @@ header span.lang button{
 /*  타이틀  */
 #title{
   /*! background-color: #ccc; */
-  background-image: url(../img/mountains.jpg);
   background-size: 100%;
   background-repeat: no-repeat;
   background-position-y: center;
@@ -236,6 +236,12 @@ header span.lang button{
   align-items: center;
   background-attachment: fixed;
   /*! background-image: url(https://www.elegantthemes.com/images/divi/divi-gallery-hero-background.jpg); */
+}
+#title img{
+  position: fixed;
+  width: 100%;
+  
+  z-index: -1;
 }
 #title hgroup{
   max-width: 1200px;
@@ -318,7 +324,7 @@ body[data-aos-duration="400"] [data-aos] {
 
 
 #portfolio{
-  background-color: #b6d29a;
+  background-color: #fff0;
   position:relative;
 }
 #portfolio::before{
@@ -326,7 +332,7 @@ body[data-aos-duration="400"] [data-aos] {
   width: 600px;
   height: 800px;
   display: block;
-  background-color: red;
+  background-color: #f000;
   transform: skewX(-45deg) translateX(-300px);
   position: absolute;
   top:0;
@@ -462,7 +468,7 @@ body[data-aos-duration="400"] [data-aos] {
 }
 
 #contact{
-  background-color: #b4dee8;
+  background-color: #fff0;
   height: 900px;
 }
 footer{
